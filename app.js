@@ -100,7 +100,7 @@ app.use(
                 "'self'",
                 "blob:",
                 "data:",
-                "https://res.cloudinary.com/douqbebwk/", //SHOULD MATCH YOUR CLOUDINARY ACCOUNT! 
+                "https://res.cloudinary.com/dkxhfjryz/",
                 "https://images.unsplash.com/",
                 "https://api.maptiler.com/",
             ],
