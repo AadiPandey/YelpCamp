@@ -25,6 +25,7 @@ const userRoutes = require('./routes/users');
 const campgroundRoutes = require('./routes/campgrounds');
 const reviewRoutes = require('./routes/reviews');
 const dbUrl = process.env.DB_URL;
+const secret = process.env.SECRET || 'thisshouldbeabettersecret!';
 
 mongoose.connect(dbUrl, {
     useNewUrlParser: true,
@@ -54,7 +55,7 @@ app.use(mongoSanitize({
 
 const store = new MongoDBStore({
     url: dbUrl,
-    secret: 'thisshouldbeabettersecret!',
+    secret: secret,
     touchAfter: 24 * 60 * 60
 })
 
@@ -65,7 +66,7 @@ store.on("error", function (e) {
 const sessionConfig = {
     store: store,
     name: 'session',
-    secret: 'thisshouldbeabettersecret!',
+    secret: secret,
     resave: false,
     saveUninitialized: true,
     cookie: {
